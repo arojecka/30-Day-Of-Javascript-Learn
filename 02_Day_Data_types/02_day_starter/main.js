@@ -27,11 +27,11 @@ Exercise: Level 1
     25.Use repeat() method to print 30 Days Of JavaScript 2 times
 */
 
-let challenge = '30 Days Of JavaScript'
+const challenge = '30 Days Of JavaScript'
 console.log(challenge)
 console.log(challenge.length)
-challenge.toLowerCase
-challenge.toUpperCase
+challenge.toLowerCase()
+challenge.toUpperCase()
 challenge.substring(0,2)
 challenge.substring(3)
 challenge.includes("Script")
@@ -53,7 +53,8 @@ const because = 'You cannot end a sentence with because because because is a con
 because.indexOf("because")
 because.lastIndexOf("because")
 because.search("because")
-' 30 Days Of JavaScript '.trim()
+let textToTrim = ' 30 Days Of JavaScript '
+textToTrim.trim()
 challenge.startsWith("30 Days Of JavaScript")
 challenge.endsWith("30 Days Of JavaScript")
 challenge.match(/a/g)

@@ -1,30 +1,4 @@
-const countries = [
-    'Albania',
-    'Bolivia',
-    'Canada',
-    'Denmark',
-    'Ethiopia',
-    'Finland',
-    'Germany',
-    'Hungary',
-    'Ireland',
-    'Japan',
-    'Kenya'
-]
-
-const webTechs = [
-    'HTML',
-    'CSS',
-    'JavaScript',
-    'React',
-    'Redux',
-    'Node',
-    'MongoDB'
-]
-
 console.log(countries)
-//alert('Open the browser console whenever you work on JavaScript')
-//alert('Open the console and check if the countries has been loaded')
 
 /* 
 Exercise: Level 1
@@ -92,6 +66,7 @@ itCompanies.shift()
 console.log(itCompanies.splice(3, 3))
 itCompanies.pop()
 console.log(itCompanies.splice())
+
 /*
 Exercise: Level 2
 
@@ -121,7 +96,34 @@ Exercise: Level 2
     ["HTML", "CSS", "JS", "React", "Redux", "Node", "Express", "MongoDB"]
 */
 
+let text = 'I love teaching and empowering people. I teach HTML, CSS, JS, React, Python.'
+text = text.replace(/[-!$%^&*()_+|~=`{}\[\]:\/;<>?,.@#]/g, "")
+let words = text.split(" ")
+console.log(words.length)
 
+const shoppingCart = ['Milk', 'Coffee', 'Tea', 'Honey']
+shoppingCart.push('Meat')
+if (shoppingCart[shoppingCart.length - 1] != 'Sugar') {
+    shoppingCart[shoppingCart.length] = 'Sugar'
+}
+if (shoppingCart.lastIndexOf('Honey') != -1) {
+    let indexToRemove = shoppingCart.lastIndexOf('Honey')
+    shoppingCart.splice(indexToRemove, 1)
+}
+
+let teaIndex = shoppingCart.indexOf("Tea")
+shoppingCart[teaIndex] = "Green Tea"
+
+console.log("Shopping cart: " + shoppingCart)
+
+countries.indexOf("Ethiopia") == -1 ? countries.push("Ethiopia") : print("ETHIOPIA")
+
+webTechs.indexOf("Sass") == -1 ? console.log(webTechs) : print("Sass is a CSS preprocess")
+
+const frontEnd = ['HTML', 'CSS', 'JS', 'React', 'Redux']
+const backEnd = ['Node', 'Express', 'MongoDB']
+const fullStack = frontEnd + backEnd
+console.log("FullStack = " + fullStack)
 
 /*
 Exercise: Level 3
@@ -137,3 +139,45 @@ Exercise: Level 3
 31.Find the middle country(ies) in the countries array
 32.Divide the countries array into two equal arrays if it is even. If countries array is not even , one more country for the first half.
 */
+
+const ages = [19, 22, 19, 24, 20, 25, 26, 24, 25, 24]
+const sortedAges = ages.sort()
+const minAge = sortedAges[0]
+const maxAge = sortedAges[sortedAges.length - 1]
+console.log(sortedAges)
+let medianAge
+
+if (sortedAges.length % 2 == 0) {
+    let sum = sortedAges[sortedAges.length / 2] + sortedAges[sortedAges.length / 2 + 1]
+    medianAge = sum / 2
+} else {
+    medianAge = parseInt(sortedAges.length / 2 - 1)
+}
+console.log(medianAge)
+
+let agesRange = maxAge - minAge
+console.log("Range = " + agesRange)
+
+const agesSum = ages[0] + ages[1] + ages[2] + ages[3] + ages[4] + ages[5] + ages[6] + ages[7] + ages[8] + ages[9]
+const averageAge = agesSum / ages.length
+
+console.log("Abs min = " + Math.abs(minAge - averageAge))
+console.log("Abs max = " + Math.abs(maxAge - averageAge))
+
+const countriesLenght = countries.length
+let middleCountry
+let countries1
+let countries2
+
+if (countriesLenght % 2 == 0) {
+    middleCountry = [countries[countriesLenght / 2], countries[countriesLenght / 2 + 1]]
+    countries1 = countries.slice(0, countriesLenght / 2 - 1)
+    countries2 = countries.slice(countriesLenght / 2 - 1, countriesLenght - 1)
+} else {
+    middleCountry = countries[parseInt(countriesLenght / 2)]
+    countries1 = countries.slice(0, parseInt(countriesLenght / 2))
+    countries2 = countries.slice(parseInt(countriesLenght / 2) - 1, countriesLenght - 1)
+}
+console.log("MiddleCountry = %s", middleCountry)
+console.log(countries1)
+console.log(countries2)

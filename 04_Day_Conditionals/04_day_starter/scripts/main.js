@@ -1,6 +1,6 @@
 // this is your main.js script
 
-//alert('Open the browser console whenever you work on JavaScript')
+alert('Open the browser console whenever you work on JavaScript')
 
 /* 
 Exercises: Level 2
